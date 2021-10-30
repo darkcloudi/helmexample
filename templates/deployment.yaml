@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata: 
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - image: bitnami/mysql:latest
+        env:
+          - name: ALLOW_EMPTY_PASSWORD
+            value : 'yes'
+        imagePullPolicy: Always
+        name: mysql
+        volumeMounts:
+          - name: mysql-configmap
+            mountPath: /docker-entrypoint-initdb.d
+      volumes:
+        - name: mysql-configmap
+          configMap:
+            name: mysqlconfigmap
+
+
+              
+
