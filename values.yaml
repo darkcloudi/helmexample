@@ -1,4 +1,4 @@
 image:
-  repository: bitnami/nginx
+  repository: bitnami/mysql
   pullPolicy: Always
   tag: "latest"

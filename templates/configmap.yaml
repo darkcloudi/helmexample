@@ -6,5 +6,5 @@ data:
   mysql_example.sql: |-
     DROP DATABASE IF EXISTS test;
     CREATE DATABASE test; 
-  #sample-file.sql : |
-  #  {{- $.Files.Get "files/sample-test.sql" | indent 4 }}
+  sample-file.sql : |
+    {{- $.Files.Get "files/sample-test.sql" | indent 6 }}

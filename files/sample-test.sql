@@ -1,2 +1,2 @@
-#CREATE DATABASE DataBase;
-#USE DataBase;
+#File to create database, runs in order
+CREATE DATABASE samsDataBase2;
